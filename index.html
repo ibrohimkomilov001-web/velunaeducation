@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veluna Education — O‘quv markazi</title>
+  <meta name="description" content="Veluna Education: Rus, Ingliz va Xitoy tillari bo‘yicha onlayn kurslar. Qulay grafik, tajribali o‘qituvchilar, zamonaviy dars uslubi.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#9ca3af;     /* gray-400 */
+      --brand:#22c55e;     /* green-500 */
+      --brand-2:#10b981;   /* emerald-500 */
+      --card:#0b1220;
+      --border:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,#0a0f1f, #0f172a 40%, #0b1220);color:var(--text);font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol'; scroll-behavior:smooth}
+    a{color:var(--brand)}
+    header{position:sticky;top:0;z-index:1000;background:rgba(11,18,32,.7);backdrop-filter: blur(12px); border-bottom:1px solid var(--border)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:36px;height:36px}
+    .brand-title{font-weight:700;letter-spacing:.3px;color:#fff}
+    .spacer{flex:1}
+    .nav a.link{color:var(--text);text-decoration:none;opacity:.85;padding:8px 10px;border-radius:10px}
+    .nav a.link:hover{background:rgba(255,255,255,.06)}
+    .cta{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#031b0d;border:none;padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none}
+    .cta:hover{filter:brightness(1.05)}
+    .hero{max-width:1100px;margin:0 auto;padding:64px 20px 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,5vw,46px);line-height:1.05;margin:0 0 12px}
+    .hero p{color:var(--muted);font-size:clamp(14px,2.7vw,18px)}
+    .hero-card{background:linear-gradient(180deg,rgba(34,197,94,.08), rgba(16,185,129,.06));border:1px solid var(--border);border-radius:var(--radius);padding:18px 18px;box-shadow:var(--shadow)}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .badge{border:1px solid var(--border);border-radius:100px;padding:8px 12px;color:var(--text);background:rgba(255,255,255,.03)}
+    .grid{max-width:1100px;margin:24px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .card h3{margin:4px 0 6px}
+    .card p{color:var(--muted);margin:0 0 10px}
+    .price{font-size:22px;font-weight:800;color:#fff}
+    .list{margin:0;padding-left:18px;color:var(--text)}
+    .section-title{max-width:1100px;margin:36px auto 14px;padding:0 20px;font-size:22px;opacity:.9}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+    .socials{display:flex;gap:12px;align-items:center}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.03)}
+    .socials a:hover{transform:translateY(-1px)}
+    .footer{max-width:1100px;margin:30px auto;padding:20px;color:var(--muted);border-top:1px solid var(--border)}
+    .contact{max-width:1100px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    label{display:block;margin:8px 0 6px}
+    input, textarea{width:100%;padding:12px;border-radius:12px;background:#0a1221;border:1px solid var(--border);color:#fff}
+    button.btn{margin-top:12px}
+    .note{font-size:13px;color:var(--muted)}
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <img src="assets/logo.svg" alt="Veluna Education logo">
+        <span class="brand-title">Veluna Education</span>
+      </a>
+      <div class="spacer"></div>
+      <a class="link" href="#kurslar">Kurslar</a>
+      <a class="link" href="#afzalliklar">Afzalliklar</a>
+      <a class="link" href="#boglanish">Bog‘lanish</a>
+      <a class="cta" href="https://t.me/veluna_education" target="_blank" rel="noopener">Kursga yozilish</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Rus, Ingliz va Xitoy tillari — onlayn va qulay formatda</h1>
+        <p>Veluna Education — zamonaviy o‘quv markazi. Darslar tajribali ustozlar bilan Zoom/Google Meet orqali o‘tiladi. Boshlang‘ichdan IELTS/HSK darajasigacha.</p>
+        <div class="badges">
+          <span class="badge">Onlayn darslar</span>
+          <span class="badge">Haftasiga 3–4 marotaba</span>
+          <span class="badge">Kichik guruhlar</span>
+          <span class="badge">Sertifikat</span>
+        </div>
+        <div class="cta-row">
+          <a class="cta" href="https://t.me/veluna_education" target="_blank" rel="noopener">Telegramda yoziling</a>
+          <div class="socials">
+            <a href="https://www.instagram.com/veluna_education?igsh=OTBncDlmOWlycjU1&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://youtube.com/@velunaeducation?si=QFe1I0OY2-sP3BzP" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <img src="assets/hero-illustration.svg" alt="Til o‘rganish illyustratsiya" style="width:100%;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.4));border-radius:18px;border:1px solid var(--border)">
+    </section>
+
+    <h2 id="kurslar" class="section-title">Kurslar</h2>
+    <section class="grid">
+      <article class="card">
+        <h3>Rus tili</h3>
+        <p>0 dan C1 gacha: grammatik, so‘z boyligi, nutq va tinglab tushunish. O‘qituvchi: tajribali metodist.</p>
+        <div class="price">Oyiga: 299 000 so‘m</div>
+        <ul class="list">
+          <li>Haftasiga 3 ta dars (60–90 daqiqa)</li>
+          <li>Uyga vazifa va tekshiruv</li>
+          <li>Guruh yoki individual</li>
+        </ul>
+        <a class="cta" href="https://t.me/veluna_education" target="_blank" rel="noopener">Ro‘yxatdan o‘tish</a>
+      </article>
+
+      <article class="card">
+        <h3>Ingliz tili (IELTS)</h3>
+        <p>General/Academic IELTS, speaking club va test sinovlari bilan.</p>
+        <div class="price">Oyiga: 349 000 so‘m</div>
+        <ul class="list">
+          <li>Band-by-band strategiyalar</li>
+          <li>Mock examlar (har oy)</li>
+          <li>Materiallar PDF/quizlar</li>
+        </ul>
+        <a class="cta" href="https://t.me/veluna_education" target="_blank" rel="noopener">Ro‘yxatdan o‘tish</a>
+      </article>
+
+      <article class="card">
+        <h3>Xitoy tili (HSK)</h3>
+        <p>HSK1–HSK5 tayyorgarlik, talaffuz va iyerogliflar bo‘yicha tizimli darsliklar.</p>
+        <div class="price">Oyiga: 399 000 so‘m</div>
+        <ul class="list">
+          <li>IELTS/HSK uslubidagi topshiriqlar</li>
+          <li>Audio-video materiallar</li>
+          <li>Qiziqarli amaliy mashg‘ulotlar</li>
+        </ul>
+        <a class="cta" href="https://t.me/veluna_education" target="_blank" rel="noopener">Ro‘yxatdan o‘tish</a>
+      </article>
+    </section>
+
+    <h2 id="afzalliklar" class="section-title">Nega aynan Veluna?</h2>
+    <section class="grid">
+      <article class="card">
+        <h3>Qulay grafik</h3>
+        <p>Sizga mos vaqtlar: tonggi, kechki yoki dam olish kunlari guruhlari.</p>
+      </article>
+      <article class="card">
+        <h3>Onlayn platformalar</h3>
+        <p>Zoom/Meet, Google Classroom, Quizlar — hammasi bitta ekotizimda.</p>
+      </article>
+      <article class="card">
+        <h3>Progress nazorati</h3>
+        <p>Har oy sinovlar, individual tavsiyalar va o‘sish diagrammalari.</p>
+      </article>
+    </section>
+
+    <h2 id="boglanish" class="section-title">Bog‘lanish</h2>
+    <section class="contact">
+      <div class="panel">
+        <h3>Tez aloqa</h3>
+        <p>Biz bilan bevosita yozish uchun Telegram kanalimizga o‘ting yoki quyidagi formani to‘ldiring.</p>
+        <div class="socials" style="margin-top:8px">
+          <a href="https://t.me/veluna_education" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.instagram.com/veluna_education?igsh=OTBncDlmOWlycjU1&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com/@velunaeducation?si=QFe1I0OY2-sP3BzP" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <form class="panel" onsubmit="return sendMessage(event)">
+        <label for="name">Ismingiz</label>
+        <input id="name" name="name" required placeholder="Ali Valiyev">
+        <label for="phone">Telefon (ixtiyoriy)</label>
+        <input id="phone" name="phone" placeholder="+998 90 123 45 67">
+        <label for="msg">Xabar</label>
+        <textarea id="msg" name="msg" rows="5" required placeholder="Menga IELTS guruhiga yozilish kerak edi..."></textarea>
+        <button class="cta btn" type="submit">Yuborish</button>
+        <p class="note">Forma mahalliy qurilmangizda ishlaydi va xabaringizni Telegram orqali ulashishni taklif qiladi.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Veluna Education — O‘quv markazi. Barcha huquqlar himoyalangan.
+  </footer>
+
+  <script>
+    // Dinamik yil
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Oddiy "mailto"/Telegram share o‘rniga: foydalanuvchi xabarini tayyorlab beradi
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const msg = document.getElementById('msg').value.trim();
+      const text = encodeURIComponent(
+        "Yangi murojaat%0A" +
+        "Ism: " + name + "%0A" +
+        (phone ? "Telefon: " + phone + "%0A" : "") +
+        "Xabar: " + msg
+      );
+      // Kanalga DM emas, lekin admin bilan aloqa uchun kanal bio dagi havoladan foydalaniladi.
+      // Hozircha kanalga yo‘naltiramiz.
+      const url = "https://t.me/veluna_education?start=" + text;
+      window.open(url, "_blank", "noopener");
+      return false;
+    }
+  </script>
+</body>
+</html>
